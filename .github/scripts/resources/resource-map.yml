@@ -1,0 +1,11 @@
+testplans:
+  - filename: ".github/scripts/resources/docs/testplan.hjson"
+    testpoints:
+    - name: ".*"
+      tests:
+        - name: ".*"
+          sim_logs: "{{test}}.yml_dir/sim.log"
+          source: "{{testpoint}}/{{testpoint}}.c"
+          additional_sources: |
+            testbench: src/integration/testbench/caliptra_ss_top_tb.sv
+            yaml: src/integration/test_suites/{{testpoint}}/{{test}}.yml
