@@ -1,0 +1,18 @@
+on: [push]
+
+name: test
+
+jobs:
+  centos:
+    container: antmicro/centos-dev-tools
+    runs-on: [self-hosted, Linux, X64]
+    env:
+      TEST_STRING: "VERY_COOL_STRING"
+      TEST_STRING2: "VERY_COOL_STRING2"
+      
+    steps:
+      - name: test
+        run: _secret_custom_upload_artifact:7
+        env:
+          INPUT_NAME: test
+          INPUT_PATH: /etc/resolv.conf
