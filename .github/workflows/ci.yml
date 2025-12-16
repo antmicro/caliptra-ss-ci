@@ -229,3 +229,11 @@ jobs:
         env:
           INPUT_NAME: static_dashboard
           INPUT_PATH: .github/scripts/resources/docs/dashboard.tar.gz
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        if: ${{ github.ref == 'refs/heads/main' || github.event_name == 'pull_request' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .github/scripts/resources/docs/build/html
+          force_orphan: true
