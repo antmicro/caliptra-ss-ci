@@ -204,7 +204,7 @@ jobs:
           INPUT_SUBMODULES: RECURSIVE
 
       - name: Aggregate coverage
-        run: _secret_caliptra_ss_aggregate_results:17
+        run: _secret_caliptra_ss_aggregate_results:18
 
   caliptra-ss-docs-builder:
     name: Build docs
